@@ -118,4 +118,4 @@ console.log('  buildings :', get('SELECT COUNT(*) c FROM buildings').c);
 console.log('  employees :', get('SELECT COUNT(*) c FROM employees').c);
 console.log('  devices   :', get('SELECT COUNT(*) c FROM devices').c);
 console.log('  checklists:', get('SELECT COUNT(*) c FROM checklists').c);
-console.log('  users     : admin/admin@123, viewer/viewer@123');
+console.log("  users     : see the banner printed on first 'npm start' (or data/FIRST-RUN-CREDENTIALS.txt)");

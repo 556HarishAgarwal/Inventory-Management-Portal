@@ -1,5 +1,6 @@
 # Live database and session secret — never commit client data
 data/
+FIRST-RUN-CREDENTIALS.txt
 *.db
 *.db-journal
 *.db-wal

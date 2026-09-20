@@ -93,5 +93,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`\n  Inventory Management Portal running`);
   console.log(`  -> http://localhost:${PORT}`);
-  console.log(`  default logins: admin / admin@123   |   viewer / viewer@123\n`);
+  console.log('');
 });

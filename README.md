@@ -18,12 +18,30 @@ npm start
 
 Open <http://localhost:3000>
 
-| Login    | Password    | Can do                        |
-|----------|-------------|-------------------------------|
-| `admin`  | `admin@123` | Everything                    |
-| `viewer` | `viewer@123`| View and export only          |
+On the very first start the portal creates two accounts with **randomly generated
+passwords** and prints them once:
 
-**Change both passwords on day one** — Users & Activity → Reset password.
+```
+  ================= FIRST RUN: ACCOUNTS CREATED =================
+    admin  / <random>    (full access)
+    viewer / <random>    (read only)
+  ===============================================================
+```
+
+| Login    | Role                   |
+|----------|------------------------|
+| `admin`  | Everything             |
+| `viewer` | View and export only   |
+
+The same passwords are written to `data/FIRST-RUN-CREDENTIALS.txt` in case you miss
+the banner. Sign in, change both under **Users & Activity → Reset password**, then
+delete that file. Neither the file nor the database is ever committed to git.
+
+To set the initial passwords yourself instead of having them generated:
+
+```bash
+IMP_ADMIN_PASSWORD='...' IMP_VIEWER_PASSWORD='...' npm start
+```
 
 Requires **Node.js 22.5 or newer** (the built-in SQLite engine). Check with `node -v`;
 download from nodejs.org if needed. To use another port: `PORT=8080 npm start`.
@@ -115,7 +133,7 @@ handles a few hundred thousand rows and a small team comfortably.
 
 ## 8. Security notes for production
 
-- Change the default passwords; create one account per person.
+- Change the first-run passwords and delete `data/FIRST-RUN-CREDENTIALS.txt`; create one account per person.
 - Run it behind HTTPS (a reverse proxy such as nginx or IIS) if it leaves the LAN.
 - `data/.session-secret` signs login cookies — keep it, don't commit it anywhere public.
 - Every create/update/delete/import is written to the audit log.

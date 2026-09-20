@@ -1,0 +1,12 @@
+{
+  "name": "inventory-management-portal",
+  "version": "1.0.0",
+  "description": "IT Inventory Management Portal - buildings, employees, devices, compliance checklist, reports, network diagrams, Excel import",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "seed": "node --experimental-sqlite db/seed.js"
+  },
+  "engines": { "node": ">=22.5.0" }
+}

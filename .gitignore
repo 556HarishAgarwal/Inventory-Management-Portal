@@ -1,0 +1,17 @@
+# Live database and session secret — never commit client data
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Uploaded HLD/LLD files
+uploads/diagrams/*
+!uploads/diagrams/.gitkeep
+
+# Node / OS noise
+node_modules/
+npm-debug.log*
+.DS_Store
+.env
+*.tar.gz
